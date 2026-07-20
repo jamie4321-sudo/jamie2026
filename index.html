@@ -5,10 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JAMIE — Inclusive Business &amp; Operations Leader</title>
 <meta name="description" content="사람의 성장을 지원하고, 복잡한 현장 운영을 안정적인 시스템으로 만드는 리더, 제이미의 퍼스널 브랜딩 페이지">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 /* ============ TOKENS ============
    ink    : #10251A  deep garden green
@@ -32,11 +28,10 @@ body{
   font-family:var(--font-body);
   background:var(--ink);
   color:var(--paper);
-  overflow-x:hidden;
   width:100%;
   -webkit-font-smoothing:antialiased;
 }
-main{overflow-x:hidden;width:100%;max-width:100%;}
+main{width:100%;max-width:100%;}
 img{max-width:100%;display:block;}
 a{color:inherit;text-decoration:none;}
 ::selection{background:var(--sun);color:var(--ink);}
@@ -721,8 +716,8 @@ footer.site{background:var(--lime);color:var(--ink);padding-top:clamp(80px,12vh,
 
 </main>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="gsap.min.js"></script>
+<script src="ScrollTrigger.min.js"></script>
 <script>
 (function(){
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

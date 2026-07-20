@@ -117,11 +117,31 @@ nav a.link:hover{background:var(--paper);color:var(--ink);}
   font-size:13px;font-weight:600;line-height:1.7;text-align:right;
   opacity:.85;
 }
-/* rotating badge */
+/* photo card */
+.hero-photo{
+  position:absolute;
+  right:clamp(18px,7vw,110px);
+  top:clamp(108px,15vh,168px);
+  width:clamp(150px,23vw,310px);
+  transform:rotate(4deg);
+  background:#fff;
+  border:3px solid var(--ink);
+  border-radius:20px;
+  padding:10px 10px 12px;
+  box-shadow:10px 12px 0 var(--ink);
+  z-index:3;
+}
+.hero-photo img{width:100%;border-radius:12px;border:1.5px solid rgba(16,37,26,.2);}
+.hero-photo figcaption{
+  font-family:var(--font-display);
+  font-size:clamp(12px,1.4vw,17px);letter-spacing:.1em;
+  text-align:center;margin-top:9px;
+}
+/* rotating badge — anchored to photo card corner */
 .badge{
   position:absolute;
-  top:clamp(120px,18vh,180px);right:clamp(24px,6vw,90px);
-  width:clamp(110px,14vw,170px);height:clamp(110px,14vw,170px);
+  bottom:-44px;left:-52px;
+  width:clamp(96px,11vw,140px);height:clamp(96px,11vw,140px);
 }
 .badge svg{width:100%;height:100%;animation:spin 14s linear infinite;}
 .badge .badge-core{
@@ -459,15 +479,19 @@ footer.site{background:var(--lime);color:var(--ink);padding-top:clamp(80px,12vh,
     <span>Portfolio — 2026</span>
   </div>
 
-  <div class="badge" aria-hidden="true">
-    <svg viewBox="0 0 100 100">
-      <defs><path id="circ" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs>
-      <text style="font-size:8.6px;font-weight:800;letter-spacing:.22em;fill:#10251A;font-family:var(--font-body);">
-        <textPath href="#circ">INCLUSIVE BUSINESS · OPERATIONS LEADER ·&#160;</textPath>
-      </text>
-    </svg>
-    <div class="badge-core">JM</div>
-  </div>
+  <figure class="hero-photo">
+    <img src="jamie.jpg" alt="제이미 프로필 사진">
+    <figcaption>JAMIE · 조윤희</figcaption>
+    <div class="badge" aria-hidden="true">
+      <svg viewBox="0 0 100 100">
+        <defs><path id="circ" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs>
+        <text style="font-size:8.6px;font-weight:800;letter-spacing:.22em;fill:#10251A;font-family:var(--font-body);">
+          <textPath href="#circ">INCLUSIVE BUSINESS · OPERATIONS LEADER ·&#160;</textPath>
+        </text>
+      </svg>
+      <div class="badge-core">JM</div>
+    </div>
+  </figure>
 
   <h1 class="hero-title" aria-label="JAMIE 제이미">
     <span class="word"><span>JA</span></span><span class="word hollow"><span>MIE</span></span>
@@ -770,7 +794,12 @@ footer.site{background:var(--lime);color:var(--ink);padding-top:clamp(80px,12vh,
   /* ---------- Hero load sequence ---------- */
   const tlHero=gsap.timeline({defaults:{ease:'power4.out'}});
   tlHero.to('.hero-title .word span',{y:0,duration:1.15,stagger:0.12,delay:0.15})
-        .to('.hero .rv',{opacity:1,y:0,duration:0.9,stagger:0.12},'-=0.55');
+        .from('.hero-photo',{opacity:0,y:70,rotate:12,duration:1.1,ease:'back.out(1.4)'},'-=0.7')
+        .to('.hero .rv',{opacity:1,y:0,duration:0.9,stagger:0.12},'-=0.75');
+  gsap.to('.hero-photo',{
+    y:90,rotate:7,ease:'none',
+    scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}
+  });
 
   /* ---------- Generic reveals ---------- */
   gsap.utils.toArray('.rv').forEach(el=>{

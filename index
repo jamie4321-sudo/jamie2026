@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JAMIE — Inclusive Business &amp; Operations Leader</title>
+<meta name="description" content="사람의 성장을 지원하고, 복잡한 현장 운영을 안정적인 시스템으로 만드는 리더, 제이미의 퍼스널 브랜딩 페이지">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+/* ============ TOKENS ============
+   ink    : #10251A  deep garden green
+   leaf   : #2E6B45  mid green
+   lime   : #C6F16D  fresh lime
+   sun    : #FFD43B  jamie yellow (photo bg)
+   paper  : #F7F5EC  warm off-white
+================================= */
+:root{
+  --ink:#10251A;
+  --leaf:#2E6B45;
+  --lime:#C6F16D;
+  --sun:#FFD43B;
+  --paper:#F7F5EC;
+  --font-display:'Anton', 'Pretendard Variable', sans-serif;
+  --font-body:'Pretendard Variable', Pretendard, -apple-system, sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--font-body);
+  background:var(--ink);
+  color:var(--paper);
+  overflow-x:hidden;
+  width:100%;
+  -webkit-font-smoothing:antialiased;
+}
+main{overflow-x:hidden;width:100%;max-width:100%;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+::selection{background:var(--sun);color:var(--ink);}
+
+/* ============ NAV ============ */
+nav{
+  position:fixed;top:20px;left:50%;transform:translateX(-50%);
+  z-index:100;display:flex;align-items:center;gap:6px;
+  background:rgba(16,37,26,.72);
+  backdrop-filter:blur(18px) saturate(160%);
+  -webkit-backdrop-filter:blur(18px) saturate(160%);
+  border:1px solid rgba(247,245,236,.14);
+  border-radius:999px;padding:8px 10px;
+  box-shadow:0 12px 40px rgba(0,0,0,.35);
+}
+nav .logo{
+  font-family:var(--font-display);font-size:15px;letter-spacing:.06em;
+  background:var(--sun);color:var(--ink);border-radius:999px;padding:8px 16px;
+}
+nav a.link{
+  font-size:13px;font-weight:600;color:var(--paper);
+  padding:8px 14px;border-radius:999px;transition:background .3s,color .3s;
+  white-space:nowrap;
+}
+nav a.link:hover{background:var(--paper);color:var(--ink);}
+@media(max-width:640px){
+  nav a.link{display:none;}
+  nav a.link.keep{display:block;}
+}
+
+/* ============ HERO ============ */
+.hero{
+  min-height:100svh;
+  background:var(--sun);
+  color:var(--ink);
+  position:relative;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:clamp(24px,4vw,64px);
+  overflow:hidden;
+}
+.hero-grain{
+  position:absolute;inset:0;pointer-events:none;opacity:.5;mix-blend-mode:multiply;
+  background-image:radial-gradient(rgba(16,37,26,.08) 1px, transparent 1px);
+  background-size:4px 4px;
+}
+.hero-eyebrow{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  font-size:clamp(11px,1.2vw,13px);font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;
+  position:absolute;top:clamp(88px,12vh,120px);left:clamp(24px,4vw,64px);right:clamp(24px,4vw,64px);
+}
+.hero-title{
+  font-family:var(--font-display);
+  font-size:clamp(74px,17.5vw,300px);
+  line-height:.88;letter-spacing:.01em;
+  text-transform:uppercase;
+  display:flex;flex-wrap:wrap;
+}
+.hero-title .word{overflow:hidden;display:inline-block;}
+.hero-title .word span{display:inline-block;transform:translateY(110%);}
+.hero-title .hollow span{
+  color:transparent;
+  -webkit-text-stroke:2.5px var(--ink);
+}
+.hero-sub{
+  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;
+  gap:20px;margin-top:clamp(20px,3vh,40px);
+}
+.hero-sub h2{
+  font-size:clamp(17px,2.1vw,26px);font-weight:800;line-height:1.5;
+  max-width:620px;word-break:keep-all;
+}
+.hero-sub h2 em{
+  font-style:normal;
+  box-shadow:inset 0 -0.5em 0 rgba(16,37,26,.14);
+}
+.hero-meta{
+  font-size:13px;font-weight:600;line-height:1.7;text-align:right;
+  opacity:.85;
+}
+/* rotating badge */
+.badge{
+  position:absolute;
+  top:clamp(120px,18vh,180px);right:clamp(24px,6vw,90px);
+  width:clamp(110px,14vw,170px);height:clamp(110px,14vw,170px);
+}
+.badge svg{width:100%;height:100%;animation:spin 14s linear infinite;}
+.badge .badge-core{
+  position:absolute;inset:0;display:grid;place-items:center;
+  font-family:var(--font-display);font-size:clamp(28px,4vw,48px);
+}
+@keyframes spin{to{transform:rotate(360deg);}}
+.scroll-hint{
+  position:absolute;bottom:24px;left:50%;transform:translateX(-50%);
+  font-size:11px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;
+  animation:bob 2s ease-in-out infinite;opacity:.65;
+}
+@keyframes bob{0%,100%{transform:translate(-50%,0);}50%{transform:translate(-50%,8px);}}
+
+/* ============ MARQUEE ============ */
+.marquee{
+  background:var(--ink);color:var(--paper);
+  border-top:2px solid var(--ink);
+  padding:18px 0;overflow:hidden;white-space:nowrap;
+  position:relative;z-index:2;
+}
+.marquee-track{display:inline-flex;gap:0;animation:marquee 26s linear infinite;will-change:transform;}
+.marquee-track span{
+  font-family:var(--font-display);
+  font-size:clamp(20px,3vw,34px);letter-spacing:.04em;text-transform:uppercase;
+  padding:0 .6em;display:inline-flex;align-items:center;gap:1.2em;
+}
+.marquee-track .dot{color:var(--lime);}
+@keyframes marquee{to{transform:translateX(-50%);}}
+
+/* ============ SECTION COMMON ============ */
+section{position:relative;}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,48px);}
+.sec-pad{padding-top:clamp(96px,14vh,180px);padding-bottom:clamp(96px,14vh,180px);}
+.sec-head{
+  font-family:var(--font-display);
+  font-size:clamp(40px,7vw,96px);line-height:.95;text-transform:uppercase;
+  margin-bottom:clamp(36px,6vh,72px);
+}
+.sec-head .accent{color:var(--lime);}
+.kicker{
+  font-size:12px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--lime);margin-bottom:18px;display:block;
+}
+
+/* ============ MANIFESTO (scrub reveal) ============ */
+.manifesto{background:var(--ink);}
+.manifesto p{
+  font-size:clamp(26px,4.6vw,58px);
+  font-weight:800;line-height:1.42;word-break:keep-all;
+  max-width:1050px;
+}
+.manifesto p .w{opacity:.12;display:inline-block;transition:none;}
+.manifesto .creds{
+  margin-top:clamp(40px,7vh,80px);
+  display:flex;flex-wrap:wrap;gap:12px;
+}
+.creds .chip{
+  border:1px solid rgba(247,245,236,.25);border-radius:999px;
+  padding:10px 20px;font-size:13.5px;font-weight:600;
+  transition:background .35s,color .35s,border-color .35s;
+}
+.creds .chip.lic{background:var(--sun);color:var(--ink);border-color:var(--sun);font-weight:800;}
+.creds .chip:hover{background:var(--lime);color:var(--ink);border-color:var(--lime);}
+
+/* ============ STRENGTH STACK CARDS ============ */
+.strengths{background:var(--paper);color:var(--ink);}
+.stack-zone{max-width:1100px;margin:0 auto;padding:0 clamp(16px,3vw,40px);}
+.s-card{
+  position:sticky;
+  border-radius:28px;
+  padding:clamp(28px,5vw,64px);
+  min-height:clamp(380px,58vh,520px);
+  display:flex;flex-direction:column;justify-content:space-between;
+  box-shadow:0 -18px 60px rgba(16,37,26,.16);
+  margin-bottom:clamp(24px,4vh,40px);
+  border:2px solid var(--ink);
+  will-change:transform;
+}
+.s-card:last-child{margin-bottom:0;}
+.s-card .s-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;}
+.s-card .s-num{
+  font-family:var(--font-display);font-size:clamp(15px,1.6vw,19px);
+  letter-spacing:.12em;opacity:.75;
+}
+.s-card .s-tag{
+  font-size:11.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+  border:1.5px solid currentColor;border-radius:999px;padding:7px 14px;
+}
+.s-card h3{
+  font-family:var(--font-display);
+  font-size:clamp(38px,7vw,86px);line-height:.95;text-transform:uppercase;
+  margin:clamp(18px,3vh,28px) 0;
+}
+.s-card p{
+  font-size:clamp(15px,1.7vw,19px);font-weight:600;line-height:1.75;
+  max-width:640px;word-break:keep-all;
+}
+.s-card.c1{background:var(--sun);}
+.s-card.c2{background:var(--lime);}
+.s-card.c3{background:var(--paper);}
+.s-card.c4{background:var(--ink);color:var(--paper);}
+
+/* ============ COMPETENCY (animated graph) ============ */
+.competency{background:var(--ink);}
+.comp-grid{
+  display:grid;grid-template-columns:1.15fr .85fr;
+  gap:clamp(40px,6vw,90px);align-items:center;
+}
+@media(max-width:900px){.comp-grid{grid-template-columns:1fr;}}
+.bars{display:flex;flex-direction:column;gap:clamp(22px,3.4vh,34px);}
+.bar-item .bar-label{
+  display:flex;justify-content:space-between;align-items:baseline;
+  margin-bottom:10px;gap:12px;
+}
+.bar-item .bar-label b{font-size:clamp(14px,1.6vw,17px);font-weight:700;word-break:keep-all;}
+.bar-item .bar-label small{font-size:11px;font-weight:600;letter-spacing:.08em;opacity:.55;text-transform:uppercase;}
+.bar-item .val{
+  font-family:var(--font-display);font-size:clamp(20px,2.4vw,28px);
+  color:var(--lime);min-width:2.6em;text-align:right;
+}
+.bar-track{
+  height:14px;border-radius:999px;background:rgba(247,245,236,.1);
+  overflow:hidden;position:relative;
+}
+.bar-fill{
+  height:100%;width:0%;border-radius:999px;
+  background:linear-gradient(90deg,var(--leaf),var(--lime) 70%,var(--sun));
+  position:relative;
+}
+.bar-fill::after{
+  content:"";position:absolute;right:0;top:50%;transform:translateY(-50%);
+  width:10px;height:10px;border-radius:50%;background:var(--paper);
+  box-shadow:0 0 12px var(--lime);
+}
+/* radar */
+.radar-box{display:grid;place-items:center;}
+.radar-box svg{width:100%;max-width:440px;height:auto;overflow:visible;}
+.radar-grid{fill:none;stroke:rgba(247,245,236,.14);stroke-width:1;}
+.radar-axis{stroke:rgba(247,245,236,.14);stroke-width:1;}
+.radar-shape{
+  fill:rgba(198,241,109,.18);
+  stroke:var(--lime);stroke-width:2.5;stroke-linejoin:round;
+  filter:drop-shadow(0 0 14px rgba(198,241,109,.35));
+}
+.radar-dot{fill:var(--sun);}
+.radar-lab{
+  fill:var(--paper);font-family:var(--font-body);font-weight:700;
+  font-size:12.5px;
+}
+.radar-lab.en{opacity:.5;font-size:9.5px;font-weight:600;letter-spacing:.06em;}
+
+/* ============ PERFORMANCE ============ */
+.performance{background:var(--sun);color:var(--ink);}
+.perf-list{display:flex;flex-direction:column;}
+.perf-item{
+  display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,4vw,56px);
+  padding:clamp(34px,5.5vh,56px) 0;
+  border-top:2px solid var(--ink);
+  align-items:start;
+}
+.perf-item:last-child{border-bottom:2px solid var(--ink);}
+.perf-num{
+  font-family:var(--font-display);
+  font-size:clamp(56px,9vw,120px);line-height:.9;
+  color:transparent;-webkit-text-stroke:2px var(--ink);
+}
+.perf-item h3{
+  font-size:clamp(20px,2.8vw,30px);font-weight:900;line-height:1.3;
+  margin-bottom:14px;word-break:keep-all;
+}
+.perf-item p{
+  font-size:clamp(14.5px,1.6vw,17.5px);font-weight:600;line-height:1.8;
+  max-width:760px;word-break:keep-all;opacity:.9;
+}
+.perf-kpis{
+  display:flex;flex-wrap:wrap;gap:clamp(20px,4vw,64px);
+  margin-top:clamp(48px,8vh,84px);
+  padding:clamp(24px,4vw,40px);
+  background:var(--ink);color:var(--paper);border-radius:24px;
+  justify-content:space-around;
+}
+.kpi{text-align:center;}
+.kpi .kpi-num{
+  font-family:var(--font-display);font-size:clamp(44px,6.5vw,80px);line-height:1;
+  color:var(--lime);
+}
+.kpi .kpi-num .unit{font-size:.5em;color:var(--sun);}
+.kpi small{display:block;margin-top:8px;font-size:12.5px;font-weight:700;letter-spacing:.06em;opacity:.8;}
+
+/* ============ TIMELINE ============ */
+.timeline{background:var(--paper);color:var(--ink);overflow:hidden;}
+.tl-pin{height:100svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;}
+.tl-head-row{padding:0 clamp(20px,4vw,48px);}
+.tl-track{
+  display:flex;gap:clamp(20px,3vw,40px);
+  padding:clamp(30px,5vh,50px) clamp(20px,4vw,48px);
+  width:max-content;will-change:transform;
+}
+.tl-card{
+  width:clamp(270px,32vw,400px);flex-shrink:0;
+  background:#fff;border:2px solid var(--ink);border-radius:24px;
+  padding:clamp(24px,3vw,36px);
+  box-shadow:8px 8px 0 var(--ink);
+  transition:transform .4s ease,box-shadow .4s ease;
+}
+.tl-card:hover{transform:translateY(-8px);box-shadow:12px 14px 0 var(--ink);}
+.tl-card .tl-step{
+  font-family:var(--font-display);font-size:14px;letter-spacing:.14em;
+  color:var(--leaf);text-transform:uppercase;
+}
+.tl-card h3{
+  font-family:var(--font-display);font-size:clamp(26px,3vw,38px);
+  text-transform:uppercase;line-height:1;margin:14px 0 12px;
+}
+.tl-card p{font-size:14.5px;font-weight:600;line-height:1.7;word-break:keep-all;}
+.tl-card.now{background:var(--ink);color:var(--paper);}
+.tl-card.now .tl-step{color:var(--sun);}
+.tl-card.now::before{
+  content:"NOW GROWING";
+  display:inline-block;background:var(--lime);color:var(--ink);
+  font-size:10.5px;font-weight:900;letter-spacing:.16em;
+  border-radius:999px;padding:5px 12px;margin-bottom:14px;
+}
+
+/* ============ GROWTH ============ */
+.growth{background:var(--ink);}
+.g-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px);}
+@media(max-width:900px){.g-grid{grid-template-columns:1fr;}}
+.g-card{
+  border:1px solid rgba(247,245,236,.18);border-radius:24px;
+  padding:clamp(24px,3vw,36px);
+  background:linear-gradient(160deg,rgba(247,245,236,.05),rgba(247,245,236,0));
+  transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .45s,background .45s;
+}
+.g-card:hover{
+  transform:translateY(-10px);
+  border-color:var(--lime);
+  background:linear-gradient(160deg,rgba(198,241,109,.1),rgba(247,245,236,0));
+}
+.g-card .g-tag{
+  display:inline-block;background:var(--sun);color:var(--ink);
+  font-size:10.5px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;
+  border-radius:999px;padding:6px 13px;margin-bottom:20px;
+}
+.g-card h3{font-size:clamp(18px,2vw,22px);font-weight:900;line-height:1.4;margin-bottom:14px;word-break:keep-all;}
+.g-card p{font-size:14.5px;font-weight:500;line-height:1.8;word-break:keep-all;opacity:.85;}
+
+/* vision statement */
+.vision{
+  position:relative;
+  margin-top:clamp(64px,10vh,120px);
+  border:2px solid var(--lime);
+  border-radius:28px;
+  padding:clamp(36px,6vw,72px);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(198,241,109,.14), transparent 45%),
+    radial-gradient(circle at 95% 100%, rgba(255,212,59,.1), transparent 40%);
+  overflow:hidden;
+}
+.vision-mark{
+  position:absolute;top:-10px;right:clamp(20px,4vw,48px);
+  font-family:var(--font-display);
+  font-size:clamp(120px,18vw,240px);line-height:1;
+  color:transparent;-webkit-text-stroke:2px rgba(198,241,109,.35);
+  pointer-events:none;user-select:none;
+}
+.vision p{
+  font-size:clamp(19px,2.8vw,32px);
+  font-weight:800;line-height:1.65;word-break:keep-all;
+  max-width:900px;position:relative;
+}
+.vision p + p{margin-top:clamp(20px,3vh,32px);}
+.vision em{
+  font-style:normal;color:var(--ink);
+  background:linear-gradient(120deg,var(--sun),var(--lime));
+  border-radius:6px;padding:0 .18em;
+  box-decoration-break:clone;-webkit-box-decoration-break:clone;
+}
+.vision-sign{
+  margin-top:clamp(24px,4vh,40px);
+  font-size:13px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--sun);border:none;padding:0;background:none;
+}
+
+/* ============ FOOTER ============ */
+footer.site{background:var(--lime);color:var(--ink);padding-top:clamp(80px,12vh,140px);}
+.foot-title{
+  font-family:var(--font-display);
+  font-size:clamp(52px,12vw,190px);line-height:.9;text-transform:uppercase;
+  text-align:center;
+}
+.foot-title .row2{color:transparent;-webkit-text-stroke:2px var(--ink);}
+.foot-sub{
+  text-align:center;font-size:clamp(14px,1.6vw,17px);font-weight:700;
+  margin-top:24px;word-break:keep-all;padding:0 20px;
+}
+.foot-bar{
+  margin-top:clamp(60px,9vh,110px);
+  border-top:2px solid var(--ink);
+  padding:22px clamp(20px,4vw,48px);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  font-size:12.5px;font-weight:700;letter-spacing:.06em;
+}
+
+/* reveal helper */
+.rv{opacity:0;transform:translateY(46px);}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;}
+  .rv{opacity:1;transform:none;}
+  .hero-title .word span{transform:none;}
+  .manifesto p .w{opacity:1;}
+  .bar-fill{width:var(--target)!important;}
+}
+</style>
+</head>
+<body>
+<main>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#top">JAMIE</a>
+  <a class="link" href="#strengths">Strengths</a>
+  <a class="link" href="#competency">Competency</a>
+  <a class="link" href="#performance">Results</a>
+  <a class="link keep" href="#journey">Journey</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-grain"></div>
+  <div class="hero-eyebrow">
+    <span>Linkage Lab · Snack &amp; Garden Team</span>
+    <span>Portfolio — 2026</span>
+  </div>
+
+  <div class="badge" aria-hidden="true">
+    <svg viewBox="0 0 100 100">
+      <defs><path id="circ" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs>
+      <text style="font-size:8.6px;font-weight:800;letter-spacing:.22em;fill:#10251A;font-family:var(--font-body);">
+        <textPath href="#circ">INCLUSIVE BUSINESS · OPERATIONS LEADER ·&#160;</textPath>
+      </text>
+    </svg>
+    <div class="badge-core">JM</div>
+  </div>
+
+  <h1 class="hero-title" aria-label="JAMIE 제이미">
+    <span class="word"><span>JA</span></span><span class="word hollow"><span>MIE</span></span>
+  </h1>
+
+  <div class="hero-sub">
+    <h2 class="rv">"사람의 성장을 지원하고, 복잡한 현장 운영을<br>
+    <em>안정적인 시스템</em>으로 만드는 리더"</h2>
+    <div class="hero-meta rv">
+      제이미 · 조윤희<br>
+      Inclusive Business &amp; Operations Leader<br>
+      장애인재활상담사 · 사회복지사 · 정원관리사
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Inclusive Leadership <i class="dot">✦</i> People Growth <i class="dot">✦</i> Business Operations <i class="dot">✦</i> Service Dev <i class="dot">✦</i> AI &amp; Data <i class="dot">✦</i>&#160;</span>
+    <span>Inclusive Leadership <i class="dot">✦</i> People Growth <i class="dot">✦</i> Business Operations <i class="dot">✦</i> Service Dev <i class="dot">✦</i> AI &amp; Data <i class="dot">✦</i>&#160;</span>
+  </div>
+</div>
+
+<!-- MANIFESTO -->
+<section class="manifesto sec-pad">
+  <div class="wrap">
+    <span class="kicker">Who I Am</span>
+    <p id="scrub-text">장애인 직업재활에 대한 전문성을 바탕으로 사람, 현장, 서비스를 연결하고 — 운영의 문제를 지속 가능한 시스템으로 전환합니다.</p>
+    <div class="creds">
+      <span class="chip lic">LICENSE · 장애인재활상담사</span>
+      <span class="chip lic">LICENSE · 사회복지사</span>
+      <span class="chip lic">LICENSE · 정원관리사</span>
+      <span class="chip">링키지랩 스낵앤가든사업팀 팀리더</span>
+      <span class="chip">카카오 복지공간 스낵바/라면존 운영 총괄</span>
+      <span class="chip">카카오 공동체 통합 조경 · 총무지원 관리</span>
+    </div>
+  </div>
+</section>
+
+<!-- 4 STRENGTHS : stacking cards -->
+<section class="strengths sec-pad" id="strengths">
+  <div class="wrap">
+    <span class="kicker" style="color:var(--leaf);">4 Core Brand Strengths</span>
+    <h2 class="sec-head rv">What Makes<br>Me <span style="color:var(--leaf);">Different</span></h2>
+  </div>
+  <div class="stack-zone" id="stack-zone">
+    <article class="s-card c1">
+      <div class="s-top"><span class="s-num">01 — PEOPLES</span><span class="s-tag">Inclusive Leadership</span></div>
+      <h3>Inclusive<br>Leadership</h3>
+      <p>장애 크루의 심리·행동적 특성과 업무 수행 수준을 다각도로 이해하고, 개인별 성장 단계에 최적화된 맞춤형 역할 배분과 지원 체계를 설계합니다.</p>
+    </article>
+    <article class="s-card c2">
+      <div class="s-top"><span class="s-num">02 — SYSTEMS</span><span class="s-tag">Operational Excellence</span></div>
+      <h3>Operational<br>Excellence</h3>
+      <p>스낵바, 대규모 조경관리, 총무지원 등 정형화하기 어려운 현장 업무를 표준화하고, 고효율 업무 매뉴얼과 세부 SLA, 철저한 점검 체계를 안착시킵니다.</p>
+    </article>
+    <article class="s-card c3">
+      <div class="s-top"><span class="s-num">03 — STRATEGY</span><span class="s-tag">Business Development</span></div>
+      <h3>Business<br>Development</h3>
+      <p>신규 사업 발굴과 복지 서비스 확장 국면에서 지속 가능한 사업 운영 모델, 최적의 인력 구조 설계, 예산 및 다각적 이해관계자 협업 프로세스를 구체화합니다.</p>
+    </article>
+    <article class="s-card c4">
+      <div class="s-top"><span class="s-num">04 — TECHNOLOGY</span><span class="s-tag">AI &amp; Data</span></div>
+      <h3>AI &amp; Data<br>Transformation</h3>
+      <p>스프레드시트, Apps Script, AI 도구를 적극 도입하여 복잡한 물량 산출, 실시간 인사관리, 조경현장 점검 이력을 전격 디지털화하고 시각화합니다.</p>
+    </article>
+  </div>
+</section>
+
+<!-- COMPETENCY : animated bars + radar -->
+<section class="competency sec-pad" id="competency">
+  <div class="wrap">
+    <span class="kicker">Core Competency Index</span>
+    <h2 class="sec-head rv">Skill<br><span class="accent">In Motion</span></h2>
+    <div class="comp-grid">
+      <div class="bars" id="bars">
+        <div class="bar-item" data-val="95">
+          <div class="bar-label"><div><b>현장 운영 및 문제 해결</b><br><small>Operational Excellence</small></div><span class="val">0%</span></div>
+          <div class="bar-track"><div class="bar-fill"></div></div>
+        </div>
+        <div class="bar-item" data-val="94">
+          <div class="bar-label"><div><b>장애인 직업재활 및 크루 성장 지원</b><br><small>Coach &amp; Grow</small></div><span class="val">0%</span></div>
+          <div class="bar-track"><div class="bar-fill"></div></div>
+        </div>
+        <div class="bar-item" data-val="92">
+          <div class="bar-label"><div><b>조직 관리 및 리더십</b><br><small>Inclusive Leadership</small></div><span class="val">0%</span></div>
+          <div class="bar-track"><div class="bar-fill"></div></div>
+        </div>
+        <div class="bar-item" data-val="90">
+          <div class="bar-label"><div><b>이해관계자 커뮤니케이션</b><br><small>Social &amp; Connect</small></div><span class="val">0%</span></div>
+          <div class="bar-track"><div class="bar-fill"></div></div>
+        </div>
+        <div class="bar-item" data-val="88">
+          <div class="bar-label"><div><b>데이터 및 AI 활용</b><br><small>Digital Transformation</small></div><span class="val">0%</span></div>
+          <div class="bar-track"><div class="bar-fill"></div></div>
+        </div>
+        <div class="bar-item" data-val="85">
+          <div class="bar-label"><div><b>사업 기획 및 서비스 개선</b><br><small>Biz Development</small></div><span class="val">0%</span></div>
+          <div class="bar-track"><div class="bar-fill"></div></div>
+        </div>
+      </div>
+      <div class="radar-box">
+        <svg id="radar" viewBox="-60 -50 520 480" aria-label="역량 레이더 차트"></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERFORMANCE -->
+<section class="performance sec-pad" id="performance">
+  <div class="wrap">
+    <span class="kicker" style="color:var(--leaf);">Representative Performance</span>
+    <h2 class="sec-head rv">Proven<br>Results</h2>
+    <div class="perf-list">
+      <div class="perf-item rv">
+        <div class="perf-num">01</div>
+        <div>
+          <h3>다중 사업 영역 통합 관리 및 시너지 창출</h3>
+          <p>스낵바 큐레이션, 실내·외 조경관리, 총무지원 등 성격이 다른 3대 사내 복지 사업 영역을 유기적으로 결합하여 통합 운영 시스템을 완성하고 고객사 만족도 극대화에 기여했습니다.</p>
+        </div>
+      </div>
+      <div class="perf-item rv">
+        <div class="perf-num">02</div>
+        <div>
+          <h3>장애·비장애 크루 시너지 조직 운영</h3>
+          <p>단순 직무 배치를 탈피하여 크루 특성과 적합성을 고려한 최적 배치, 신규 입사자 조기 적응 프로세스 고도화, 세밀한 리스크 케어를 구축하여 안정적인 고용 유지율을 달성했습니다.</p>
+        </div>
+      </div>
+      <div class="perf-item rv">
+        <div class="perf-num">03</div>
+        <div>
+          <h3>데이터 및 디지털 혁신 기반 운영 고도화</h3>
+          <p>스프레드시트, Apps Script, AI를 활용해 물량표, 현장 점검 이력, 인사 관리 등 수작업 프로세스를 디지털 대시보드로 자동화하여 운영 효율성을 획기적으로 개선했습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="perf-kpis rv">
+      <div class="kpi"><div class="kpi-num"><span class="count" data-count="3">0</span><span class="unit">개</span></div><small>통합 운영 사업 영역</small></div>
+      <div class="kpi"><div class="kpi-num"><span class="count" data-count="36">0</span><span class="unit">+</span></div><small>함께 성장하는 크루</small></div>
+      <div class="kpi"><div class="kpi-num"><span class="count" data-count="3">0</span><span class="unit">종</span></div><small>전문 자격</small></div>
+      <div class="kpi"><div class="kpi-num"><span class="count" data-count="100">0</span><span class="unit">%</span></div><small>현장을 시스템으로</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE : horizontal scroll -->
+<section class="timeline" id="journey">
+  <div class="tl-pin" id="tl-pin">
+    <div class="tl-head-row">
+      <span class="kicker" style="color:var(--leaf);">Career Path Timeline</span>
+      <h2 class="sec-head" style="margin-bottom:0;">Evolution<br>of a <span style="color:var(--leaf);">Leader</span></h2>
+    </div>
+    <div class="tl-track" id="tl-track">
+      <article class="tl-card">
+        <span class="tl-step">Phase 1 · Specialty</span>
+        <h3>Specialty</h3>
+        <p>장애인 직업재활 전문성 구축 — 재활상담과 사회복지 현장에서 사람을 이해하는 힘을 쌓았습니다.</p>
+      </article>
+      <article class="tl-card">
+        <span class="tl-step">Phase 2 · Operations</span>
+        <h3>Operations</h3>
+        <p>현장 운영 및 크루 관리 체계 수립 — 매일의 현장을 반복 가능한 운영 체계로 정리했습니다.</p>
+      </article>
+      <article class="tl-card">
+        <span class="tl-step">Phase 3 · Leading</span>
+        <h3>Leading</h3>
+        <p>실무 파트 리딩 및 기획 조율 — 파트를 이끌며 사람과 기획 사이의 균형을 배웠습니다.</p>
+      </article>
+      <article class="tl-card">
+        <span class="tl-step">Phase 4 · Integration</span>
+        <h3>Integration</h3>
+        <p>스낵앤가든 통합팀 팀리더 — 스낵큐레이션·조경·총무지원, 세 개의 다른 세계를 하나의 팀으로.</p>
+      </article>
+      <article class="tl-card now">
+        <span class="tl-step">Phase 5 · Innovation</span>
+        <h3>Innovation</h3>
+        <p>AI·데이터 기반 운영 혁신 리더 — 현장의 감각과 데이터의 정확함을 잇는 다음 챕터를 만드는 중입니다.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GROWTH FOCUS -->
+<section class="growth sec-pad">
+  <div class="wrap">
+    <span class="kicker">Growth Focus</span>
+    <h2 class="sec-head rv">Next<br><span class="accent">Chapter</span></h2>
+    <div class="g-grid">
+      <div class="g-card rv">
+        <span class="g-tag">Work Delegation</span>
+        <h3>역할 위임과 중간 리더 육성으로 조직 자율성 극대화</h3>
+        <p>수작업으로 직접 점검하던 방식을 탈피하여, 중간 실무 리더를 집중 양성하고 책임과 자율을 확실히 분배합니다.</p>
+      </div>
+      <div class="g-card rv">
+        <span class="g-tag">KPI Management</span>
+        <h3>핵심 지표(SLA) 중심의 전략 관리 체계 전환</h3>
+        <p>세부 업무 마이크로 관여를 축소하는 대신, 품질 평가 기준과 SLA 등 핵심 성공 지표 중심의 전략적 제어로 전환합니다.</p>
+      </div>
+      <div class="g-card rv">
+        <span class="g-tag">Prioritization</span>
+        <h3>아이디어 우선순위 매핑 및 타임라인 고도화</h3>
+        <p>참신한 기획들을 즉흥적으로 병렬 추진하기보다, 명확한 임팩트 기준의 우선순위와 정교한 단계별 일정으로 완결성을 보증합니다.</p>
+      </div>
+    </div>
+
+    <blockquote class="vision rv">
+      <span class="vision-mark" aria-hidden="true">"</span>
+      <p>좋은 경험으로, 좋은 경험을 <em>설계</em>합니다.<br>공간의 서사와 관계를 <em>큐레이션하는 팀</em>으로 성장했으면 합니다.</p>
+      <footer class="vision-sign">— JAMIE</footer>
+    </blockquote>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site">
+  <h2 class="foot-title rv">Let's Grow<br><span class="row2">Together</span></h2>
+  <p class="foot-sub rv">사람의 성장이 시스템이 되는 곳에서, 다음 이야기를 함께 만들어요.</p>
+  <div class="foot-bar">
+    <span>© 2026 JAMIE · 조윤희</span>
+    <span>Snack &amp; Garden Team, Linkage Lab</span>
+    <span>Made with Green &amp; Data</span>
+  </div>
+</footer>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hasGsap = typeof gsap !== 'undefined';
+
+  /* ---------- RADAR CHART (SVG build) ---------- */
+  const radarData = [
+    {ko:'현장 운영', en:'OPS', v:95},
+    {ko:'직업재활·성장', en:'GROW', v:94},
+    {ko:'리더십', en:'LEAD', v:92},
+    {ko:'커뮤니케이션', en:'CONNECT', v:90},
+    {ko:'데이터·AI', en:'DIGITAL', v:88},
+    {ko:'사업 기획', en:'BIZ', v:85}
+  ];
+  const svg = document.getElementById('radar');
+  const CX=200, CY=190, R=150, N=radarData.length;
+  const pt=(i,r)=>{const a=-Math.PI/2+i*2*Math.PI/N;return[CX+r*Math.cos(a),CY+r*Math.sin(a)];};
+  let gridHTML='';
+  [0.25,0.5,0.75,1].forEach(f=>{
+    const pts=radarData.map((_,i)=>pt(i,R*f).join(',')).join(' ');
+    gridHTML+='<polygon class="radar-grid" points="'+pts+'"/>';
+  });
+  radarData.forEach((_,i)=>{
+    const [x,y]=pt(i,R);
+    gridHTML+='<line class="radar-axis" x1="'+CX+'" y1="'+CY+'" x2="'+x+'" y2="'+y+'"/>';
+  });
+  const shapePts=(scale)=>radarData.map((d,i)=>pt(i,R*d.v/100*scale).join(',')).join(' ');
+  gridHTML+='<polygon id="radar-shape" class="radar-shape" points="'+shapePts(0.001)+'"/>';
+  radarData.forEach((d,i)=>{
+    const [x,y]=pt(i,R*d.v/100);
+    gridHTML+='<circle class="radar-dot" id="rdot'+i+'" cx="'+CX+'" cy="'+CY+'" r="0" data-x="'+x+'" data-y="'+y+'"/>';
+    const [lx,ly]=pt(i,R+34);
+    const anchor=Math.abs(lx-CX)<10?'middle':(lx>CX?'start':'end');
+    gridHTML+='<text class="radar-lab" x="'+lx+'" y="'+(ly-2)+'" text-anchor="'+anchor+'">'+d.ko+'</text>';
+    gridHTML+='<text class="radar-lab en" x="'+lx+'" y="'+(ly+14)+'" text-anchor="'+anchor+'">'+d.en+' · '+d.v+'</text>';
+  });
+  svg.innerHTML=gridHTML;
+
+  const showRadarFinal=()=>{
+    document.getElementById('radar-shape').setAttribute('points',shapePts(1));
+    radarData.forEach((d,i)=>{
+      const dot=document.getElementById('rdot'+i);
+      dot.setAttribute('cx',dot.dataset.x);dot.setAttribute('cy',dot.dataset.y);
+      dot.setAttribute('r',5);
+    });
+  };
+
+  /* ---------- Split scrub text into words ---------- */
+  const scrub=document.getElementById('scrub-text');
+  scrub.innerHTML=scrub.textContent.trim().split(' ')
+    .map(w=>'<span class="w">'+w+'</span>').join(' ');
+
+  if(reduced || !hasGsap){
+    // No-motion fallback: show everything as final state
+    document.querySelectorAll('.rv').forEach(el=>{el.style.opacity=1;el.style.transform='none';});
+    document.querySelectorAll('.hero-title .word span').forEach(el=>el.style.transform='none');
+    document.querySelectorAll('#scrub-text .w').forEach(el=>el.style.opacity=1);
+    document.querySelectorAll('.bar-item').forEach(item=>{
+      item.querySelector('.bar-fill').style.width=item.dataset.val+'%';
+      item.querySelector('.val').textContent=item.dataset.val+'%';
+    });
+    document.querySelectorAll('.count').forEach(el=>el.textContent=el.dataset.count);
+    showRadarFinal();
+    return;
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* ---------- Hero load sequence ---------- */
+  const tlHero=gsap.timeline({defaults:{ease:'power4.out'}});
+  tlHero.to('.hero-title .word span',{y:0,duration:1.15,stagger:0.12,delay:0.15})
+        .to('.hero .rv',{opacity:1,y:0,duration:0.9,stagger:0.12},'-=0.55');
+
+  /* ---------- Generic reveals ---------- */
+  gsap.utils.toArray('.rv').forEach(el=>{
+    if(el.closest('.hero'))return;
+    gsap.to(el,{
+      opacity:1,y:0,duration:1,ease:'power3.out',
+      scrollTrigger:{trigger:el,start:'top 86%'}
+    });
+  });
+
+  /* ---------- Manifesto word scrub ---------- */
+  gsap.to('#scrub-text .w',{
+    opacity:1,stagger:0.06,ease:'none',
+    scrollTrigger:{trigger:'#scrub-text',start:'top 78%',end:'bottom 45%',scrub:0.6}
+  });
+
+  /* ---------- Stacking strength cards ---------- */
+  const cards=gsap.utils.toArray('.s-card');
+  cards.forEach((card,i)=>{
+    card.style.top=(90+i*14)+'px';
+    if(i<cards.length-1){
+      gsap.to(card,{
+        scale:0.94,filter:'brightness(0.92)',ease:'none',
+        scrollTrigger:{trigger:cards[i+1],start:'top bottom',end:'top top',scrub:true}
+      });
+    }
+  });
+
+  /* ---------- Competency bars + counters ---------- */
+  gsap.utils.toArray('.bar-item').forEach((item,i)=>{
+    const val=+item.dataset.val;
+    const fill=item.querySelector('.bar-fill');
+    const label=item.querySelector('.val');
+    const cnt={n:0};
+    ScrollTrigger.create({
+      trigger:item,start:'top 88%',once:true,
+      onEnter:()=>{
+        gsap.to(fill,{width:val+'%',duration:1.6,delay:i*0.08,ease:'power3.inOut'});
+        gsap.to(cnt,{n:val,duration:1.6,delay:i*0.08,ease:'power3.inOut',
+          onUpdate:()=>label.textContent=Math.round(cnt.n)+'%'});
+      }
+    });
+  });
+
+  /* ---------- Radar draw ---------- */
+  const shape=document.getElementById('radar-shape');
+  const rState={s:0.001};
+  ScrollTrigger.create({
+    trigger:'#radar',start:'top 82%',once:true,
+    onEnter:()=>{
+      gsap.to(rState,{s:1,duration:1.5,ease:'elastic.out(1,0.65)',
+        onUpdate:()=>shape.setAttribute('points',shapePts(rState.s))});
+      radarData.forEach((d,i)=>{
+        const dot=document.getElementById('rdot'+i);
+        gsap.to(dot,{
+          attr:{cx:dot.dataset.x,cy:dot.dataset.y,r:5},
+          duration:1.2,delay:0.25+i*0.07,ease:'back.out(2)'
+        });
+      });
+    }
+  });
+
+  /* ---------- KPI counters ---------- */
+  gsap.utils.toArray('.count').forEach(el=>{
+    const target=+el.dataset.count;
+    const obj={n:0};
+    ScrollTrigger.create({
+      trigger:el,start:'top 90%',once:true,
+      onEnter:()=>gsap.to(obj,{n:target,duration:1.8,ease:'power2.out',
+        onUpdate:()=>el.textContent=Math.round(obj.n)})
+    });
+  });
+
+  /* ---------- Horizontal timeline (desktop only) ---------- */
+  ScrollTrigger.matchMedia({
+    '(min-width: 901px)':function(){
+      const track=document.getElementById('tl-track');
+      const getDist=()=>track.scrollWidth-window.innerWidth+96;
+      gsap.to(track,{
+        x:()=>-getDist(),ease:'none',
+        scrollTrigger:{
+          trigger:'#tl-pin',start:'top top',
+          end:()=>'+='+getDist(),
+          pin:true,scrub:0.8,invalidateOnRefresh:true
+        }
+      });
+    },
+    '(max-width: 900px)':function(){
+      const pin=document.getElementById('tl-pin');
+      pin.style.height='auto';
+      pin.style.paddingTop='96px';pin.style.paddingBottom='96px';
+      const track=document.getElementById('tl-track');
+      track.style.width='100%';track.style.flexDirection='column';
+      gsap.utils.toArray('.tl-card').forEach(card=>{
+        card.style.width='100%';
+        gsap.from(card,{opacity:0,y:50,duration:0.9,ease:'power3.out',
+          scrollTrigger:{trigger:card,start:'top 88%'}});
+      });
+    }
+  });
+
+  /* ---------- Marquee speed on scroll direction ---------- */
+  let lastY=0;
+  const mq=document.querySelector('.marquee-track');
+  window.addEventListener('scroll',()=>{
+    const y=window.scrollY;
+    mq.style.animationDirection=(y<lastY)?'reverse':'normal';
+    lastY=y;
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
